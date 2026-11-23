@@ -1,0 +1,28 @@
+# Ligne de configuration
+node_modules/
+# Ligne de configuration
+coverage/
+# Ligne de configuration
+*.log
+# Ligne de configuration
+logs/
+# Ligne de configuration
+.env
+# Ligne de configuration
+.env.*
+# Ligne de configuration
+!.env.example
+# Ligne de configuration
+uploads/*
+# Ligne de configuration
+!uploads/.gitkeep
+# Ligne de configuration
+.DS_Store
+# Ligne de configuration
+Thumbs.db
+# Ligne de configuration
+DEV-DEMO.local.md
+# Ligne de configuration
+*.pem
+# Ligne de configuration
+*.key
