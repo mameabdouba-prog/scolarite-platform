@@ -1,0 +1,113 @@
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/head') %>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/sidebar') %>
+<%# Commentaire: Exécute du code JavaScript EJS %>
+<%
+  <%# Commentaire: Contenu texte/template %>
+  const valides = stats.parEtat.find(function (r) { return r.etat === 'VALIDE'; });
+  <%# Commentaire: Contenu texte/template %>
+  const rejetes = stats.parEtat.find(function (r) { return r.etat === 'REJETE'; });
+<%# Commentaire: Contenu texte/template %>
+%>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="page-head">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div><h1 class="page-title">Tableau de bord</h1><p class="page-subtitle">Activité du service de la scolarité. Données de l’année universitaire <%= currentYear %> et historique complet des demandes.</p></div>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<div class="summary-strip">
+  <%# Commentaire: Inclut un partial/template EJS %>
+  <%- include('../partials/statCard', { label: 'Dossiers reçus', value: total, note: 'Toutes années confondues' }) %>
+  <%# Commentaire: Inclut un partial/template EJS %>
+  <%- include('../partials/statCard', { label: 'En attente', value: enAttente, note: 'À instruire' }) %>
+  <%# Commentaire: Inclut un partial/template EJS %>
+  <%- include('../partials/statCard', { label: 'Traitements terminés', value: traites, note: 'Validés ou rejetés' }) %>
+  <%# Commentaire: Inclut un partial/template EJS %>
+  <%- include('../partials/statCard', { label: 'Rejetés', value: rejetes ? rejetes.total : 0, note: 'Avec commentaire' }) %>
+<%# Commentaire: Ferme une balise HTML %>
+</div>
+
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<div class="panel-grid">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <section class="panel">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <div class="panel-head"><div><h3>Dossiers récemment soumis</h3><p>Les cinq dernières demandes enregistrées</p></div><a class="link-strong" href="/agent/dossiers">Tous les dossiers</a></div>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <div class="panel-body panel-body-flush table-wrap">
+      <%# Commentaire: Condition EJS: affiche selon condition %>
+      <% if (!recents.length) { %>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <p class="empty-line">Aucun dossier soumis.</p>
+      <%# Commentaire: Branche alternative EJS %>
+      <% } else { %>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <table class="data-table">
+          <%# Commentaire: Ouvre/contient une balise HTML %>
+          <thead><tr><th>Référence</th><th>Étudiant</th><th>Filière</th><th>État</th><th class="text-right">Action</th></tr></thead>
+          <%# Commentaire: Ouvre/contient une balise HTML %>
+          <tbody>
+            <%# Commentaire: Exécute du code JavaScript EJS %>
+            <% recents.forEach(function (d) { %>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <tr>
+                <%# Commentaire: Ouvre/contient une balise HTML %>
+                <td class="tabular"><%= d.reference_dossier %></td>
+                <%# Commentaire: Ouvre/contient une balise HTML %>
+                <td><%= d.etudiant_prenom %> <%= d.etudiant_nom %></td>
+                <%# Commentaire: Ouvre/contient une balise HTML %>
+                <td><%= d.filiere %></td>
+                <%# Commentaire: Ouvre/contient une balise HTML %>
+                <td><%- include('../partials/etatBadge', { etat: d.etat }) %></td>
+                <%# Commentaire: Ouvre/contient une balise HTML %>
+                <td class="text-right"><a class="btn btn-sm btn-secondary" href="/agent/dossiers/<%= d.id %>">Ouvrir</a></td>
+              <%# Commentaire: Ferme une balise HTML %>
+              </tr>
+            <%# Commentaire: Boucle/fermeture de bloc EJS %>
+            <% }); %>
+          <%# Commentaire: Ferme une balise HTML %>
+          </tbody>
+        <%# Commentaire: Ferme une balise HTML %>
+        </table>
+      <%# Commentaire: Exécute du code JavaScript EJS %>
+      <% } %>
+    <%# Commentaire: Ferme une balise HTML %>
+    </div>
+  <%# Commentaire: Ferme une balise HTML %>
+  </section>
+
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <section class="panel">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <div class="panel-head"><div><h3>Répartition des dossiers</h3><p>Effectifs par état de traitement</p></div></div>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <div class="panel-body">
+      <%# Commentaire: Condition EJS: affiche selon condition %>
+      <% if (!stats.parEtat.length) { %><p class="empty-line">Aucune donnée disponible.</p><% } else { %>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <table class="mini-table">
+          <%# Commentaire: Ouvre/contient une balise HTML %>
+          <tbody>
+            <%# Commentaire: Exécute du code JavaScript EJS %>
+            <% stats.parEtat.forEach(function (r) { %>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <tr><th scope="row"><%= etatLabels[r.etat] || r.etat %></th><td class="tabular"><%= r.total %></td></tr>
+            <%# Commentaire: Boucle/fermeture de bloc EJS %>
+            <% }); %>
+          <%# Commentaire: Ferme une balise HTML %>
+          </tbody>
+        <%# Commentaire: Ferme une balise HTML %>
+        </table>
+      <%# Commentaire: Exécute du code JavaScript EJS %>
+      <% } %>
+    <%# Commentaire: Ferme une balise HTML %>
+    </div>
+  <%# Commentaire: Ferme une balise HTML %>
+  </section>
+<%# Commentaire: Ferme une balise HTML %>
+</div>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/footer') %>

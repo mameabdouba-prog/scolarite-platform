@@ -1,0 +1,70 @@
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/head') %>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/sidebar') %>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="page-head">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div><h1 class="page-title">Gestion des agents</h1><p class="page-subtitle">Créez des comptes et gérez l’accès au service de la scolarité.</p></div>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <a class="btn btn-primary" href="/admin/agents/nouveau"><%- icon('plus') %> Nouvel agent</a>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="panel">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="panel-body panel-body-flush table-wrap">
+    <%# Commentaire: Condition EJS: affiche selon condition %>
+    <% if (!agents.length) { %>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <p class="empty-line">Aucun agent enregistré. Utilisez le bouton « Nouvel agent » pour créer le premier compte.</p>
+    <%# Commentaire: Branche alternative EJS %>
+    <% } else { %>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <table class="data-table">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <thead><tr><th>Agent</th><th>E-mail</th><th>Statut</th><th>Créé le</th><th class="text-right">Action</th></tr></thead>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <tbody>
+          <%# Commentaire: Exécute du code JavaScript EJS %>
+          <% agents.forEach(function (a) { %>
+            <%# Commentaire: Ouvre/contient une balise HTML %>
+            <tr>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><span class="row-title"><%= a.prenom %> <%= a.nom %></span></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><%= a.email %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><span class="status <%= a.actif ? 'status-active' : 'status-inactive' %>"><%= a.actif ? 'Actif' : 'Désactivé' %></span></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td class="tabular"><%= formatDate(a.created_at) %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td class="text-right">
+                <%# Commentaire: Ouvre/contient une balise HTML %>
+                <form method="post" action="/admin/agents/<%= a.id %>/actif" data-confirm-form="Confirmer <%= a.actif ? 'la désactivation' : 'l’activation' %> de ce compte ?">
+                  <%# Commentaire: Ouvre/contient une balise HTML %>
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                  <%# Commentaire: Ouvre/contient une balise HTML %>
+                  <input type="hidden" name="actif" value="<%= a.actif ? '0' : '1' %>">
+                  <%# Commentaire: Ouvre/contient une balise HTML %>
+                  <button class="btn btn-sm <%= a.actif ? 'btn-danger' : 'btn-secondary' %>" type="submit"><%- icon(a.actif ? 'x' : 'check') %> <%= a.actif ? 'Désactiver' : 'Activer' %></button>
+                <%# Commentaire: Ferme une balise HTML %>
+                </form>
+              <%# Commentaire: Ferme une balise HTML %>
+              </td>
+            <%# Commentaire: Ferme une balise HTML %>
+            </tr>
+          <%# Commentaire: Boucle/fermeture de bloc EJS %>
+          <% }); %>
+        <%# Commentaire: Ferme une balise HTML %>
+        </tbody>
+      <%# Commentaire: Ferme une balise HTML %>
+      </table>
+    <%# Commentaire: Exécute du code JavaScript EJS %>
+    <% } %>
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/footer') %>

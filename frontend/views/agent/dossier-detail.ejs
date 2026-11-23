@@ -1,0 +1,174 @@
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/head') %>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/sidebar') %>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="page-head">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <h1 class="page-title">Instruction du dossier</h1>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <p class="page-subtitle">Dossier <span class="tabular"><%= dossier.reference_dossier %></span> · <%= dossier.etudiant_prenom %> <%= dossier.etudiant_nom %> · <span class="tabular"><%= dossier.numero_etudiant %></span></p>
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="page-actions">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <a class="btn btn-secondary" href="/agent/dossiers"><%- icon('arrow-left') %> Retour</a>
+    <%# Commentaire: Condition EJS: affiche selon condition %>
+    <% if (dossier.etat === 'VALIDE') { %><a class="btn btn-primary" href="/agent/dossiers/<%= dossier.id %>/attestation"><%- icon('download') %> Attestation</a><% } %>
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<div class="panel-grid">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <section class="panel">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <div class="panel-head"><div><h3>Informations du dossier</h3><p>Données transmises par l’étudiant</p></div><%- include('../partials/etatBadge', { etat: dossier.etat }) %></div>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <div class="panel-body">
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <dl class="detail-grid">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <div><dt>Référence</dt><dd class="tabular"><%= dossier.reference_dossier %></dd></div>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <div><dt>Étudiant</dt><dd><%= dossier.etudiant_prenom %> <%= dossier.etudiant_nom %></dd></div>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <div><dt>E-mail</dt><dd><%= dossier.etudiant_email %></dd></div>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <div><dt>Filière</dt><dd><%= dossier.filiere %></dd></div>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <div><dt>Niveau</dt><dd><%= dossier.niveau %></dd></div>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <div><dt>Année universitaire</dt><dd><%= dossier.annee_universitaire %></dd></div>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <div><dt>Soumis le</dt><dd><%= formatDate(dossier.date_soumission) %></dd></div>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <div><dt>Traité le</dt><dd><%= formatDate(dossier.date_traitement) %></dd></div>
+      <%# Commentaire: Ferme une balise HTML %>
+      </dl>
+      <%# Commentaire: Condition EJS: affiche selon condition %>
+      <% if (dossier.commentaire) { %>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <div class="notice notice-info"><strong>Commentaire enregistré</strong><p><%= dossier.commentaire %></p></div>
+      <%# Commentaire: Exécute du code JavaScript EJS %>
+      <% } %>
+    <%# Commentaire: Ferme une balise HTML %>
+    </div>
+  <%# Commentaire: Ferme une balise HTML %>
+  </section>
+
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <section class="panel">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <div class="panel-head"><div><h3>Pièces justificatives</h3><p><%= pieces.length %> pièce(s) sur <%= Object.keys(documentTypes).length %> requises.</p></div></div>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <div class="panel-body">
+      <%# Commentaire: Condition EJS: affiche selon condition %>
+      <% if (!pieces.length) { %>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <p class="empty-line">Aucune pièce déposée.</p>
+      <%# Commentaire: Branche alternative EJS %>
+      <% } else { %>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <div class="list">
+          <%# Commentaire: Exécute du code JavaScript EJS %>
+          <% pieces.forEach(function (piece) { %>
+            <%# Commentaire: Ouvre/contient une balise HTML %>
+            <div class="list-row">
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <div class="list-content"><strong><%= documentTypes[piece.type] || piece.type %></strong><small><%= piece.nom_original %> · <%= formatBytes(piece.taille) %></small></div>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <a class="btn btn-sm btn-secondary" href="/agent/pieces/<%= piece.id %>/download"><%- icon('eye') %> Voir</a>
+            <%# Commentaire: Ferme une balise HTML %>
+            </div>
+          <%# Commentaire: Boucle/fermeture de bloc EJS %>
+          <% }); %>
+        <%# Commentaire: Ferme une balise HTML %>
+        </div>
+      <%# Commentaire: Exécute du code JavaScript EJS %>
+      <% } %>
+    <%# Commentaire: Ferme une balise HTML %>
+    </div>
+  <%# Commentaire: Ferme une balise HTML %>
+  </section>
+<%# Commentaire: Ferme une balise HTML %>
+</div>
+
+<%# Commentaire: Condition EJS: affiche selon condition %>
+<% if (dossier.etat === 'EN_ATTENTE') { %>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="panel">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="panel-head"><div><h3>Décision</h3><p>Le rejet nécessite obligatoirement un commentaire.</p></div></div>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="panel-body">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <form method="post" action="/agent/dossiers/<%= dossier.id %>/traiter" data-confirm-form="Voulez-vous bien enregistrer la décision sur ce dossier ?">
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="decision-grid">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <label class="decision-option"><input type="radio" name="etat" value="VALIDE" required><span>Valider le dossier</span></label>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <label class="decision-option decision-option-danger"><input type="radio" name="etat" value="REJETE" required data-requires-comment><span>Rejeter le dossier</span></label>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="field">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <label for="commentaire">Commentaire (obligatoire en cas de rejet)</label>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <textarea id="commentaire" name="commentaire" rows="4" maxlength="1000" placeholder="Précisez les motifs de votre décision."></textarea>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="form-actions">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <button class="btn btn-primary" type="submit">Enregistrer la décision</button>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+    <%# Commentaire: Ferme une balise HTML %>
+    </form>
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+<%# Commentaire: Exécute du code JavaScript EJS %>
+<% } %>
+
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="panel">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="panel-head"><div><h3>Historique des actions</h3><p>Opérations enregistrées sur ce dossier</p></div></div>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="panel-body">
+    <%# Commentaire: Condition EJS: affiche selon condition %>
+    <% if (!historique.length) { %>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <p class="empty-line">Aucune action enregistrée.</p>
+    <%# Commentaire: Branche alternative EJS %>
+    <% } else { %>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <ul class="log-list">
+        <%# Commentaire: Exécute du code JavaScript EJS %>
+        <% historique.forEach(function (h) { %>
+          <%# Commentaire: Ouvre/contient une balise HTML %>
+          <li><span class="log-date"><%= formatDate(h.created_at) %></span><div class="log-body"><strong><%= h.action %></strong><p><%= h.description %></p><small><%= h.utilisateur_type %></small></div></li>
+        <%# Commentaire: Boucle/fermeture de bloc EJS %>
+        <% }); %>
+      <%# Commentaire: Ferme une balise HTML %>
+      </ul>
+    <%# Commentaire: Exécute du code JavaScript EJS %>
+    <% } %>
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/footer') %>

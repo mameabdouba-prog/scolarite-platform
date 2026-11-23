@@ -1,0 +1,127 @@
+<%# Commentaire: Exécute du code JavaScript EJS %>
+<%
+  <%# Commentaire: Contenu texte/template %>
+  const route = currentPath || '';
+  <%# Commentaire: Contenu texte/template %>
+  const roleLabels = { ETUDIANT: 'Espace étudiant', AGENT: 'Espace scolarité', ADMINISTRATEUR: 'Administration' };
+  <%# Commentaire: Contenu texte/template %>
+  const roleLabel = roleLabels[user.role] || roleLabels.ETUDIANT;
+  <%# Commentaire: Contenu texte/template %>
+  const initials = String(user.prenom || 'U').charAt(0) + String(user.nom || '').charAt(0);
+  <%# Commentaire: Contenu texte/template %>
+  function isActive(href) {
+    <%# Commentaire: Contenu texte/template %>
+    return route === href || route.startsWith(href + '/');
+  <%# Commentaire: Contenu texte/template %>
+  }
+<%# Commentaire: Contenu texte/template %>
+%>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<div class="app-shell">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="sidebar-backdrop" data-menu-close></div>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <aside class="sidebar" id="sidebar">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <a class="brand" href="/dashboard">
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <span class="brand-mark"><img src="/images/USSEIN-LOGO-copie.png" alt="Logo USSEIN"></span>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <span class="brand-text"><strong>SCOLARITÉ</strong><small>USSEIN</small></span>
+    <%# Commentaire: Ferme une balise HTML %>
+    </a>
+
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <nav class="nav-group" aria-label="Navigation principale">
+      <%# Commentaire: Condition EJS: affiche selon condition %>
+      <% if (user.role === 'ETUDIANT') { %>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <p class="nav-label">Mon espace</p>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <a class="nav-link <%= isActive('/etudiant/tableau-de-bord') ? 'active' : '' %>" href="/etudiant/tableau-de-bord"><%- icon('dashboard') %><span>Tableau de bord</span></a>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <a class="nav-link <%= isActive('/etudiant/inscription') ? 'active' : '' %>" href="/etudiant/inscription"><%- icon('plus') %><span>Nouvelle inscription</span></a>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <a class="nav-link <%= isActive('/etudiant/dossiers') ? 'active' : '' %>" href="/etudiant/dossiers"><%- icon('folder') %><span>Mes dossiers</span></a>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <a class="nav-link <%= isActive('/etudiant/profil') ? 'active' : '' %>" href="/etudiant/profil"><%- icon('user') %><span>Mon profil</span></a>
+      <%# Commentaire: Branche alternative EJS %>
+      <% } else if (user.role === 'AGENT') { %>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <p class="nav-label">Espace scolarité</p>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <a class="nav-link <%= isActive('/agent/tableau-de-bord') ? 'active' : '' %>" href="/agent/tableau-de-bord"><%- icon('dashboard') %><span>Tableau de bord</span></a>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <a class="nav-link <%= isActive('/agent/dossiers') ? 'active' : '' %>" href="/agent/dossiers"><%- icon('folder') %><span>Dossiers</span></a>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <a class="nav-link <%= isActive('/agent/historique') ? 'active' : '' %>" href="/agent/historique"><%- icon('clock') %><span>Historique</span></a>
+      <%# Commentaire: Branche alternative EJS %>
+      <% } else { %>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <p class="nav-label">Administration</p>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <a class="nav-link <%= isActive('/admin/tableau-de-bord') ? 'active' : '' %>" href="/admin/tableau-de-bord"><%- icon('dashboard') %><span>Tableau de bord</span></a>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <a class="nav-link <%= isActive('/admin/agents') ? 'active' : '' %>" href="/admin/agents"><%- icon('users') %><span>Agents</span></a>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <p class="nav-label">Suivi</p>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <a class="nav-link <%= isActive('/agent/dossiers') ? 'active' : '' %>" href="/agent/dossiers"><%- icon('folder') %><span>Dossiers</span></a>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <a class="nav-link <%= isActive('/agent/historique') ? 'active' : '' %>" href="/agent/historique"><%- icon('clock') %><span>Historique</span></a>
+      <%# Commentaire: Exécute du code JavaScript EJS %>
+      <% } %>
+    <%# Commentaire: Ferme une balise HTML %>
+    </nav>
+
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <div class="sidebar-foot">
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="user-card">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <span class="avatar"><%= initials %></span>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <span class="user-card-text"><strong><%= user.prenom %> <%= user.nom %></strong><small><%= roleLabel %></small></span>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <form method="post" action="/logout">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <button class="logout-button" type="submit"><%- icon('logout') %><span>Se déconnecter</span></button>
+      <%# Commentaire: Ferme une balise HTML %>
+      </form>
+    <%# Commentaire: Ferme une balise HTML %>
+    </div>
+  <%# Commentaire: Ferme une balise HTML %>
+  </aside>
+
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="main-area">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <header class="topbar">
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-controls="sidebar" aria-expanded="false" aria-label="Ouvrir le menu"><%- icon('list') %></button>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="topbar-title">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <span><%= roleLabel %></span>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <span class="separator" aria-hidden="true">›</span>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <strong><%= title || 'Tableau de bord' %></strong>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="topbar-actions">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <span class="topbar-meta"><%= typeof currentYear !== 'undefined' ? currentYear : '' %></span>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+    <%# Commentaire: Ferme une balise HTML %>
+    </header>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <main class="content" id="main-content">
+      <%# Commentaire: Inclut un partial/template EJS %>
+      <%- include('alerts') %>

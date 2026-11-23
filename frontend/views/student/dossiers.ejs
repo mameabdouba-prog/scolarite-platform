@@ -1,0 +1,62 @@
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/head') %>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/sidebar') %>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="page-head">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div><h1 class="page-title">Mes dossiers</h1><p class="page-subtitle">Liste de vos demandes d’inscription, de la plus récente à la plus ancienne.</p></div>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <a class="btn btn-primary" href="/etudiant/inscription"><%- icon('plus') %> Nouvelle inscription</a>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="panel">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="panel-body panel-body-flush table-wrap">
+    <%# Commentaire: Condition EJS: affiche selon condition %>
+    <% if (!dossiers.length) { %>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <p class="empty-line">Aucun dossier soumis. Utilisez le bouton « Nouvelle inscription » pour en créer un.</p>
+    <%# Commentaire: Branche alternative EJS %>
+    <% } else { %>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <table class="data-table">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <thead><tr><th>Référence</th><th>Année</th><th>Filière</th><th>Niveau</th><th>État</th><th>Soumis le</th><th class="text-right">Action</th></tr></thead>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <tbody>
+          <%# Commentaire: Exécute du code JavaScript EJS %>
+          <% dossiers.forEach(function (d) { %>
+            <%# Commentaire: Ouvre/contient une balise HTML %>
+            <tr>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td class="tabular"><%= d.reference_dossier %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><%= d.annee_universitaire %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><%= d.filiere %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><%= d.niveau %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><%- include('../partials/etatBadge', { etat: d.etat }) %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><%= formatDate(d.date_soumission) %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td class="text-right"><a class="btn btn-sm btn-secondary" href="/etudiant/dossiers/<%= d.id %>"><%- icon('eye') %> Détail</a></td>
+            <%# Commentaire: Ferme une balise HTML %>
+            </tr>
+          <%# Commentaire: Boucle/fermeture de bloc EJS %>
+          <% }); %>
+        <%# Commentaire: Ferme une balise HTML %>
+        </tbody>
+      <%# Commentaire: Ferme une balise HTML %>
+      </table>
+    <%# Commentaire: Exécute du code JavaScript EJS %>
+    <% } %>
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/footer') %>

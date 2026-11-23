@@ -1,0 +1,80 @@
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/head') %>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/sidebar') %>
+<%# Commentaire: Exécute du code JavaScript EJS %>
+<%
+  <%# Commentaire: Contenu texte/template %>
+  const v = (name) => (values && values[name] != null ? values[name] : '');
+<%# Commentaire: Contenu texte/template %>
+%>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="page-head">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div><h1 class="page-title">Nouvelle demande d’inscription</h1><p class="page-subtitle">Un seul dossier est accepté par année universitaire. La soumission est définitive.</p></div>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="panel panel-narrow">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="panel-head"><div><h3>Informations du dossier</h3><p>Les champs marqués d’un astérisque sont obligatoires.</p></div></div>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="panel-body">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <form method="post" action="/etudiant/inscription" class="form-grid">
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="field">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <label for="anneeUniversitaire">Année universitaire *</label>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <input id="anneeUniversitaire" name="anneeUniversitaire" value="<%= v('anneeUniversitaire') %>" placeholder="AAAA-AAAA" required>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="field">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <label for="niveau">Niveau *</label>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <select id="niveau" name="niveau" required>
+          <%# Commentaire: Ouvre/contient une balise HTML %>
+          <option value="">Sélectionner un niveau</option>
+          <%# Commentaire: Exécute du code JavaScript EJS %>
+          <% niveaux.forEach(function (n) { %><option value="<%= n %>" <%= v('niveau') === n ? 'selected' : '' %>><%= n %></option><% }); %>
+        <%# Commentaire: Ferme une balise HTML %>
+        </select>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="field field-full">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <label for="filiere">Filière *</label>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <select id="filiere" name="filiere" required>
+          <%# Commentaire: Ouvre/contient une balise HTML %>
+          <option value="">Sélectionner une filière</option>
+          <%# Commentaire: Exécute du code JavaScript EJS %>
+          <% filieres.forEach(function (f) { %><option value="<%= f %>" <%= v('filiere') === f ? 'selected' : '' %>><%= f %></option><% }); %>
+        <%# Commentaire: Ferme une balise HTML %>
+        </select>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="field-full notice notice-info"><div>Après soumission, déposez les pièces suivantes : carte d’identité, relevé de notes, photo d’identité et reçu de paiement.</div></div>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="field-full form-actions">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <button class="btn btn-primary" type="submit">Soumettre la demande</button>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <a class="btn btn-secondary" href="/etudiant/tableau-de-bord">Annuler</a>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+    <%# Commentaire: Ferme une balise HTML %>
+    </form>
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/footer') %>

@@ -1,0 +1,22 @@
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/head') %>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<div class="error-page">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="error-box">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <span class="error-code">Erreur 500</span>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <h1>Erreur serveur</h1>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <p>Le service n’a pas pu traiter la demande. Réessayez ou contactez la scolarité.</p>
+    <%# Commentaire: Condition EJS: affiche selon condition %>
+    <% if (typeof message !== 'undefined' && message) { %><p class="small"><%= message %></p><% } %>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <a class="link-strong" href="/dashboard">Retour au tableau de bord</a>
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+<%# Commentaire: Ferme une balise HTML %>
+</div>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/authFooter') %>

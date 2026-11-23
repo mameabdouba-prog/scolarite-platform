@@ -1,0 +1,2713 @@
+/* Sélecteur CSS: début de bloc de styles */
+@font-face {
+  /* Déclare la propriété CSS font-family */
+  font-family: "Outfit";
+  /* Déclare la propriété CSS src */
+  src: url("/fonts/outfit-latin-400-normal.woff2") format("woff2");
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 400;
+  /* Déclare la propriété CSS font-style */
+  font-style: normal;
+  /* Déclare la propriété CSS font-display */
+  font-display: swap;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+@font-face {
+  /* Déclare la propriété CSS font-family */
+  font-family: "Outfit";
+  /* Déclare la propriété CSS src */
+  src: url("/fonts/outfit-latin-500-normal.woff2") format("woff2");
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 500;
+  /* Déclare la propriété CSS font-style */
+  font-style: normal;
+  /* Déclare la propriété CSS font-display */
+  font-display: swap;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+@font-face {
+  /* Déclare la propriété CSS font-family */
+  font-family: "Outfit";
+  /* Déclare la propriété CSS src */
+  src: url("/fonts/outfit-latin-600-normal.woff2") format("woff2");
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 600;
+  /* Déclare la propriété CSS font-style */
+  font-style: normal;
+  /* Déclare la propriété CSS font-display */
+  font-display: swap;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+@font-face {
+  /* Déclare la propriété CSS font-family */
+  font-family: "Outfit";
+  /* Déclare la propriété CSS src */
+  src: url("/fonts/outfit-latin-700-normal.woff2") format("woff2");
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 700;
+  /* Déclare la propriété CSS font-style */
+  font-style: normal;
+  /* Déclare la propriété CSS font-display */
+  font-display: swap;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+@font-face {
+  /* Déclare la propriété CSS font-family */
+  font-family: "IBM Plex Mono";
+  /* Déclare la propriété CSS src */
+  src: url("/fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 400;
+  /* Déclare la propriété CSS font-style */
+  font-style: normal;
+  /* Déclare la propriété CSS font-display */
+  font-display: swap;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+@font-face {
+  /* Déclare la propriété CSS font-family */
+  font-family: "IBM Plex Mono";
+  /* Déclare la propriété CSS src */
+  src: url("/fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2");
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 500;
+  /* Déclare la propriété CSS font-style */
+  font-style: normal;
+  /* Déclare la propriété CSS font-display */
+  font-display: swap;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+:root {
+  /* Déclare la propriété CSS --brand-navy */
+  --brand-navy: #0b5a2b;
+  /* Déclare la propriété CSS --brand-gold */
+  --brand-gold: #c0ce00;
+  /* Déclare la propriété CSS --brand-red */
+  --brand-red: #8d3614;
+  /* Déclare la propriété CSS --canvas */
+  --canvas: #f5f7f3;
+  /* Déclare la propriété CSS --surface */
+  --surface: #ffffff;
+  /* Déclare la propriété CSS --surface-2 */
+  --surface-2: #fbfcfa;
+  /* Déclare la propriété CSS --surface-3 */
+  --surface-3: #eef3ea;
+  /* Déclare la propriété CSS --line */
+  --line: #d7e0d2;
+  /* Déclare la propriété CSS --line-soft */
+  --line-soft: #e6ece2;
+  /* Déclare la propriété CSS --ink */
+  --ink: #182117;
+  /* Déclare la propriété CSS --ink-2 */
+  --ink-2: #3d4a3b;
+  /* Déclare la propriété CSS --muted */
+  --muted: #5f6d5c;
+  /* Déclare la propriété CSS --primary */
+  --primary: #4f9b1f;
+  /* Déclare la propriété CSS --primary-dark */
+  --primary-dark: #0b5a2b;
+  /* Déclare la propriété CSS --primary-soft */
+  --primary-soft: #edf7e6;
+  /* Déclare la propriété CSS --success */
+  --success: #0b6b34;
+  /* Déclare la propriété CSS --success-soft */
+  --success-soft: #edf7f1;
+  /* Déclare la propriété CSS --warning */
+  --warning: #8a5a00;
+  /* Déclare la propriété CSS --warning-soft */
+  --warning-soft: #fff8e6;
+  /* Déclare la propriété CSS --danger */
+  --danger: #8d3614;
+  /* Déclare la propriété CSS --danger-soft */
+  --danger-soft: #fdf1ee;
+  /* Déclare la propriété CSS --focus */
+  --focus: #4f9b1f;
+  /* Déclare la propriété CSS --focus-on-dark */
+  --focus-on-dark: #ffffff;
+  /* Déclare la propriété CSS --font-mono */
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  /* Déclare la propriété CSS --sidebar-bg */
+  --sidebar-bg: #0b5a2b;
+  /* Déclare la propriété CSS --sidebar-fg */
+  --sidebar-fg: #e3eddc;
+  /* Déclare la propriété CSS --sidebar-muted */
+  --sidebar-muted: #b9cca9;
+  /* Déclare la propriété CSS --radius */
+  --radius: 4px;
+  /* Déclare la propriété CSS --radius-control */
+  --radius-control: 3px;
+  /* Déclare la propriété CSS --header-h */
+  --header-h: 64px;
+  /* Déclare la propriété CSS --sidebar-w */
+  --sidebar-w: 248px;
+  /* Déclare la propriété CSS --shadow-drawer */
+  --shadow-drawer: 6px 0 24px rgba(11, 90, 43, 0.18);
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+*,
+/* Ligne CSS */
+*::before,
+/* Sélecteur CSS: début de bloc de styles */
+*::after {
+  /* Déclare la propriété CSS box-sizing */
+  box-sizing: border-box;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+html {
+  /* Déclare la propriété CSS min-height */
+  min-height: 100%;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+body {
+  /* Déclare la propriété CSS margin */
+  margin: 0;
+  /* Déclare la propriété CSS min-height */
+  min-height: 100dvh;
+  /* Déclare la propriété CSS background */
+  background: var(--canvas);
+  /* Déclare la propriété CSS color */
+  color: var(--ink-2);
+  /* Déclare la propriété CSS font-family */
+  font-family: "Outfit", "Segoe UI", system-ui, -apple-system, sans-serif;
+  /* Déclare la propriété CSS font-size */
+  font-size: 14px;
+  /* Déclare la propriété CSS line-height */
+  line-height: 1.5;
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+h1,
+/* Ligne CSS */
+h2,
+/* Ligne CSS */
+h3,
+/* Ligne CSS */
+h4,
+/* Ligne CSS */
+p,
+/* Ligne CSS */
+dl,
+/* Ligne CSS */
+dd,
+/* Sélecteur CSS: début de bloc de styles */
+figure {
+  /* Déclare la propriété CSS margin */
+  margin: 0;
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+h1,
+/* Ligne CSS */
+h2,
+/* Ligne CSS */
+h3,
+/* Sélecteur CSS: début de bloc de styles */
+h4 {
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 600;
+  /* Déclare la propriété CSS line-height */
+  line-height: 1.3;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+a {
+  /* Déclare la propriété CSS color */
+  color: var(--primary);
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 500;
+  /* Déclare la propriété CSS text-decoration */
+  text-decoration: none;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+a:hover {
+  /* Déclare la propriété CSS color */
+  color: var(--primary-dark);
+  /* Déclare la propriété CSS text-decoration */
+  text-decoration: underline;
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+button,
+/* Ligne CSS */
+input,
+/* Ligne CSS */
+select,
+/* Sélecteur CSS: début de bloc de styles */
+textarea {
+  /* Déclare la propriété CSS font */
+  font: inherit;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+button {
+  /* Déclare la propriété CSS cursor */
+  cursor: pointer;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.icon {
+  /* Déclare la propriété CSS display */
+  display: inline-flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS justify-content */
+  justify-content: center;
+  /* Déclare la propriété CSS font-size */
+  font-size: 16px;
+  /* Déclare la propriété CSS line-height */
+  line-height: 1;
+  /* Déclare la propriété CSS vertical-align */
+  vertical-align: -0.14em;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.tabular {
+  /* Déclare la propriété CSS font-family */
+  font-family: var(--font-mono);
+  /* Déclare la propriété CSS font-size */
+  font-size: 0.95em;
+  /* Déclare la propriété CSS font-variant-numeric */
+  font-variant-numeric: tabular-nums;
+  /* Déclare la propriété CSS letter-spacing */
+  letter-spacing: -0.01em;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.icon-sm {
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.muted {
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.small {
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.text-right {
+  /* Déclare la propriété CSS text-align */
+  text-align: right;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.skip-link {
+  /* Déclare la propriété CSS position */
+  position: fixed;
+  /* Déclare la propriété CSS top */
+  top: 8px;
+  /* Déclare la propriété CSS left */
+  left: 8px;
+  /* Déclare la propriété CSS z-index */
+  z-index: 100;
+  /* Déclare la propriété CSS padding */
+  padding: 8px 12px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid var(--line);
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS background */
+  background: var(--surface);
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+  /* Déclare la propriété CSS transform */
+  transform: translateY(-160%);
+  /* Déclare la propriété CSS transition */
+  transition: transform 0.15s ease;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.skip-link:focus {
+  /* Déclare la propriété CSS transform */
+  transform: translateY(0);
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.btn {
+  /* Déclare la propriété CSS display */
+  display: inline-flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS justify-content */
+  justify-content: center;
+  /* Déclare la propriété CSS gap */
+  gap: 7px;
+  /* Déclare la propriété CSS min-height */
+  min-height: 38px;
+  /* Déclare la propriété CSS padding */
+  padding: 8px 13px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid transparent;
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS background */
+  background: transparent;
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 600;
+  /* Déclare la propriété CSS white-space */
+  white-space: nowrap;
+  /* Déclare la propriété CSS transition */
+  transition: background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.btn:hover {
+  /* Déclare la propriété CSS text-decoration */
+  text-decoration: none;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+:where(a, button, input, select, textarea):focus-visible {
+  /* Déclare la propriété CSS outline */
+  outline: 2px solid var(--focus);
+  /* Déclare la propriété CSS outline-offset */
+  outline-offset: 2px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.sidebar :where(a, button):focus-visible {
+  /* Déclare la propriété CSS outline-color */
+  outline-color: var(--focus-on-dark);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.btn-primary {
+  /* Déclare la propriété CSS background */
+  background: var(--primary);
+  /* Déclare la propriété CSS color */
+  color: #ffffff;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.btn-primary:hover {
+  /* Déclare la propriété CSS background */
+  background: #3f8518;
+  /* Déclare la propriété CSS color */
+  color: #ffffff;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.btn-secondary {
+  /* Déclare la propriété CSS border-color */
+  border-color: var(--line);
+  /* Déclare la propriété CSS background */
+  background: var(--surface);
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.btn-secondary:hover {
+  /* Déclare la propriété CSS border-color */
+  border-color: var(--muted);
+  /* Déclare la propriété CSS background */
+  background: var(--surface-2);
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.btn-quiet {
+  /* Déclare la propriété CSS color */
+  color: var(--ink-2);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.btn-quiet:hover {
+  /* Déclare la propriété CSS background */
+  background: var(--surface-3);
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.btn-danger {
+  /* Déclare la propriété CSS border-color */
+  border-color: #e3c0bb;
+  /* Déclare la propriété CSS background */
+  background: var(--surface);
+  /* Déclare la propriété CSS color */
+  color: var(--danger);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.btn-danger:hover {
+  /* Déclare la propriété CSS background */
+  background: var(--danger-soft);
+  /* Déclare la propriété CSS color */
+  color: var(--danger);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.btn-primary:active {
+  /* Déclare la propriété CSS background */
+  background: #084320;
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+.btn-secondary:active,
+/* Ligne CSS */
+.btn-quiet:active,
+/* Sélecteur CSS: début de bloc de styles */
+.btn-danger:active {
+  /* Déclare la propriété CSS background */
+  background: var(--surface-3);
+  /* Déclare la propriété CSS transform */
+  transform: translateY(1px);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.btn-sm {
+  /* Déclare la propriété CSS min-height */
+  min-height: 34px;
+  /* Déclare la propriété CSS padding */
+  padding: 5px 9px;
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.btn-block {
+  /* Déclare la propriété CSS width */
+  width: 100%;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.link-strong {
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 600;
+  /* Déclare la propriété CSS white-space */
+  white-space: nowrap;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.field {
+  /* Déclare la propriété CSS display */
+  display: grid;
+  /* Déclare la propriété CSS gap */
+  gap: 6px;
+  /* Déclare la propriété CSS min-width */
+  min-width: 0;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.field label {
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 600;
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+.field input,
+/* Ligne CSS */
+.field select,
+/* Sélecteur CSS: début de bloc de styles */
+.field textarea {
+  /* Déclare la propriété CSS width */
+  width: 100%;
+  /* Déclare la propriété CSS min-height */
+  min-height: 40px;
+  /* Déclare la propriété CSS padding */
+  padding: 9px 11px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid var(--line);
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS background */
+  background: var(--surface);
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+  /* Déclare la propriété CSS font-size */
+  font-size: 14px;
+  /* Déclare la propriété CSS transition */
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.field textarea {
+  /* Déclare la propriété CSS min-height */
+  min-height: 100px;
+  /* Déclare la propriété CSS resize */
+  resize: vertical;
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+.field input::placeholder,
+/* Sélecteur CSS: début de bloc de styles */
+.field textarea::placeholder {
+  /* Déclare la propriété CSS color */
+  color: #6b778c;
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+.field input:focus,
+/* Ligne CSS */
+.field select:focus,
+/* Sélecteur CSS: début de bloc de styles */
+.field textarea:focus {
+  /* Déclare la propriété CSS outline */
+  outline: 2px solid var(--focus);
+  /* Déclare la propriété CSS outline-offset */
+  outline-offset: 1px;
+  /* Déclare la propriété CSS border-color */
+  border-color: var(--primary);
+  /* Déclare la propriété CSS box-shadow */
+  box-shadow: none;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.field input:disabled {
+  /* Déclare la propriété CSS background */
+  background: var(--surface-3);
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.field input[type="file"] {
+  /* Déclare la propriété CSS padding */
+  padding: 8px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.help-text {
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.field-error {
+  /* Déclare la propriété CSS color */
+  color: var(--danger);
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 500;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.form-grid {
+  /* Déclare la propriété CSS display */
+  display: grid;
+  /* Déclare la propriété CSS grid-template-columns */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* Déclare la propriété CSS gap */
+  gap: 16px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.form-stack {
+  /* Déclare la propriété CSS display */
+  display: grid;
+  /* Déclare la propriété CSS gap */
+  gap: 16px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.field-full {
+  /* Déclare la propriété CSS grid-column */
+  grid-column: 1 / -1;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.form-actions {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS flex-wrap */
+  flex-wrap: wrap;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS gap */
+  gap: 8px;
+  /* Déclare la propriété CSS margin-top */
+  margin-top: 20px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.auth-page {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS justify-content */
+  justify-content: center;
+  /* Déclare la propriété CSS min-height */
+  min-height: 100dvh;
+  /* Déclare la propriété CSS padding */
+  padding: 48px 16px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.auth-card {
+  /* Déclare la propriété CSS width */
+  width: 100%;
+  /* Déclare la propriété CSS max-width */
+  max-width: 420px;
+  /* Déclare la propriété CSS height */
+  height: fit-content;
+  /* Déclare la propriété CSS padding */
+  padding: 30px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid var(--line);
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius);
+  /* Déclare la propriété CSS background */
+  background: var(--surface);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.auth-card-wide {
+  /* Déclare la propriété CSS max-width */
+  max-width: 640px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.auth-brand {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS gap */
+  gap: 10px;
+  /* Déclare la propriété CSS margin-bottom */
+  margin-bottom: 26px;
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.auth-brand:hover {
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+  /* Déclare la propriété CSS text-decoration */
+  text-decoration: none;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.auth-brand-mark {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS justify-content */
+  justify-content: center;
+  /* Déclare la propriété CSS width */
+  width: 52px;
+  /* Déclare la propriété CSS height */
+  height: 52px;
+  /* Déclare la propriété CSS overflow */
+  overflow: hidden;
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS background */
+  background: #ffffff;
+  /* Déclare la propriété CSS padding */
+  padding: 2px;
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+.brand-mark img,
+/* Sélecteur CSS: début de bloc de styles */
+.auth-brand-mark img {
+  /* Déclare la propriété CSS display */
+  display: block;
+  /* Déclare la propriété CSS width */
+  width: 100%;
+  /* Déclare la propriété CSS height */
+  height: 100%;
+  /* Déclare la propriété CSS object-fit */
+  object-fit: contain;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.auth-brand-text {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS flex-direction */
+  flex-direction: column;
+  /* Déclare la propriété CSS line-height */
+  line-height: 1.2;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.auth-brand-text strong {
+  /* Déclare la propriété CSS font-size */
+  font-size: 15px;
+  /* Déclare la propriété CSS letter-spacing */
+  letter-spacing: 0.04em;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.auth-brand-text small {
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 11px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.auth-card h1 {
+  /* Déclare la propriété CSS font-size */
+  font-size: 22px;
+  /* Déclare la propriété CSS margin-bottom */
+  margin-bottom: 6px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.auth-card > p {
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+  /* Déclare la propriété CSS margin-bottom */
+  margin-bottom: 24px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.auth-note {
+  /* Déclare la propriété CSS margin-top */
+  margin-top: 22px;
+  /* Déclare la propriété CSS padding-top */
+  padding-top: 16px;
+  /* Déclare la propriété CSS border-top */
+  border-top: 1px solid var(--line-soft);
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.app-shell {
+  /* Déclare la propriété CSS display */
+  display: grid;
+  /* Déclare la propriété CSS grid-template-columns */
+  grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+  /* Déclare la propriété CSS min-height */
+  min-height: 100dvh;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.sidebar-backdrop {
+  /* Déclare la propriété CSS display */
+  display: none;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.sidebar {
+  /* Déclare la propriété CSS position */
+  position: sticky;
+  /* Déclare la propriété CSS top */
+  top: 0;
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS flex-direction */
+  flex-direction: column;
+  /* Déclare la propriété CSS height */
+  height: 100dvh;
+  /* Déclare la propriété CSS padding */
+  padding: 20px 14px 16px;
+  /* Déclare la propriété CSS overflow-y */
+  overflow-y: auto;
+  /* Déclare la propriété CSS background */
+  background: var(--sidebar-bg);
+  /* Déclare la propriété CSS color */
+  color: var(--sidebar-fg);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.brand {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS gap */
+  gap: 10px;
+  /* Déclare la propriété CSS padding */
+  padding: 0 8px 22px;
+  /* Déclare la propriété CSS color */
+  color: #ffffff;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.brand:hover {
+  /* Déclare la propriété CSS color */
+  color: #ffffff;
+  /* Déclare la propriété CSS text-decoration */
+  text-decoration: none;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.brand-mark {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS justify-content */
+  justify-content: center;
+  /* Déclare la propriété CSS width */
+  width: 42px;
+  /* Déclare la propriété CSS height */
+  height: 42px;
+  /* Déclare la propriété CSS overflow */
+  overflow: hidden;
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS background */
+  background: #ffffff;
+  /* Déclare la propriété CSS padding */
+  padding: 2px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.brand-text {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS flex-direction */
+  flex-direction: column;
+  /* Déclare la propriété CSS line-height */
+  line-height: 1.2;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.brand-text strong {
+  /* Déclare la propriété CSS font-size */
+  font-size: 14px;
+  /* Déclare la propriété CSS letter-spacing */
+  letter-spacing: 0.05em;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.brand-text small {
+  /* Déclare la propriété CSS color */
+  color: var(--sidebar-muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 11px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.nav-group {
+  /* Déclare la propriété CSS display */
+  display: grid;
+  /* Déclare la propriété CSS gap */
+  gap: 2px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.nav-label {
+  /* Déclare la propriété CSS margin */
+  margin: 16px 8px 6px;
+  /* Déclare la propriété CSS color */
+  color: var(--sidebar-muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.nav-link {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS gap */
+  gap: 10px;
+  /* Déclare la propriété CSS min-height */
+  min-height: 40px;
+  /* Déclare la propriété CSS padding */
+  padding: 9px 10px;
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS color */
+  color: var(--sidebar-fg);
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 500;
+  /* Déclare la propriété CSS transition */
+  transition: background-color 0.12s ease, color 0.12s ease;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.nav-link:hover {
+  /* Déclare la propriété CSS background */
+  background: rgba(255, 255, 255, 0.07);
+  /* Déclare la propriété CSS color */
+  color: #ffffff;
+  /* Déclare la propriété CSS text-decoration */
+  text-decoration: none;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.nav-link.active {
+  /* Déclare la propriété CSS background */
+  background: rgba(255, 255, 255, 0.12);
+  /* Déclare la propriété CSS box-shadow */
+  box-shadow: inset 2px 0 var(--brand-gold);
+  /* Déclare la propriété CSS color */
+  color: #ffffff;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.sidebar-foot {
+  /* Déclare la propriété CSS margin-top */
+  margin-top: auto;
+  /* Déclare la propriété CSS padding-top */
+  padding-top: 14px;
+  /* Déclare la propriété CSS border-top */
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.user-card {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS gap */
+  gap: 10px;
+  /* Déclare la propriété CSS padding */
+  padding: 0 8px 12px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.avatar {
+  /* Déclare la propriété CSS display */
+  display: grid;
+  /* Déclare la propriété CSS place-items */
+  place-items: center;
+  /* Déclare la propriété CSS width */
+  width: 34px;
+  /* Déclare la propriété CSS height */
+  height: 34px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS color */
+  color: #ffffff;
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 600;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.user-card-text {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS flex-direction */
+  flex-direction: column;
+  /* Déclare la propriété CSS min-width */
+  min-width: 0;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.user-card-text strong {
+  /* Déclare la propriété CSS color */
+  color: #ffffff;
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.user-card-text small {
+  /* Déclare la propriété CSS color */
+  color: var(--sidebar-muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 11px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.logout-button {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS gap */
+  gap: 9px;
+  /* Déclare la propriété CSS width */
+  width: 100%;
+  /* Déclare la propriété CSS min-height */
+  min-height: 38px;
+  /* Déclare la propriété CSS padding */
+  padding: 8px 10px;
+  /* Déclare la propriété CSS border */
+  border: 0;
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS background */
+  background: transparent;
+  /* Déclare la propriété CSS color */
+  color: var(--sidebar-fg);
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+  /* Déclare la propriété CSS text-align */
+  text-align: left;
+  /* Déclare la propriété CSS transition */
+  transition: background-color 0.12s ease, color 0.12s ease;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.logout-button:hover {
+  /* Déclare la propriété CSS background */
+  background: rgba(255, 255, 255, 0.07);
+  /* Déclare la propriété CSS color */
+  color: #ffffff;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.main-area {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS flex-direction */
+  flex-direction: column;
+  /* Déclare la propriété CSS min-width */
+  min-width: 0;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.topbar {
+  /* Déclare la propriété CSS position */
+  position: sticky;
+  /* Déclare la propriété CSS top */
+  top: 0;
+  /* Déclare la propriété CSS z-index */
+  z-index: 20;
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS gap */
+  gap: 14px;
+  /* Déclare la propriété CSS height */
+  height: var(--header-h);
+  /* Déclare la propriété CSS padding */
+  padding: 0 28px;
+  /* Déclare la propriété CSS border-bottom */
+  border-bottom: 1px solid var(--line);
+  /* Déclare la propriété CSS background */
+  background: var(--surface);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.menu-toggle {
+  /* Déclare la propriété CSS display */
+  display: none;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS justify-content */
+  justify-content: center;
+  /* Déclare la propriété CSS width */
+  width: 40px;
+  /* Déclare la propriété CSS height */
+  height: 40px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid var(--line);
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS background */
+  background: var(--surface);
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.topbar-title {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: baseline;
+  /* Déclare la propriété CSS gap */
+  gap: 7px;
+  /* Déclare la propriété CSS min-width */
+  min-width: 0;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.topbar-title span {
+  /* Déclare la propriété CSS display */
+  display: inline;
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.topbar-title .separator {
+  /* Déclare la propriété CSS color */
+  color: var(--line);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.topbar-title strong {
+  /* Déclare la propriété CSS display */
+  display: inline;
+  /* Déclare la propriété CSS overflow */
+  overflow: hidden;
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 600;
+  /* Déclare la propriété CSS text-overflow */
+  text-overflow: ellipsis;
+  /* Déclare la propriété CSS white-space */
+  white-space: nowrap;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.topbar-meta {
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+  /* Déclare la propriété CSS white-space */
+  white-space: nowrap;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.content {
+  /* Déclare la propriété CSS flex */
+  flex: 1;
+  /* Déclare la propriété CSS width */
+  width: 100%;
+  /* Déclare la propriété CSS max-width */
+  max-width: 1280px;
+  /* Déclare la propriété CSS margin */
+  margin: 0 auto;
+  /* Déclare la propriété CSS padding */
+  padding: 24px 28px 36px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.app-footer {
+  /* Déclare la propriété CSS padding */
+  padding: 14px 28px 22px;
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 11px;
+  /* Déclare la propriété CSS text-align */
+  text-align: center;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.page-head {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: flex-start;
+  /* Déclare la propriété CSS justify-content */
+  justify-content: space-between;
+  /* Déclare la propriété CSS gap */
+  gap: 16px;
+  /* Déclare la propriété CSS margin-bottom */
+  margin-bottom: 18px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.page-title {
+  /* Déclare la propriété CSS font-size */
+  font-size: 24px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.page-subtitle {
+  /* Déclare la propriété CSS max-width */
+  max-width: 72ch;
+  /* Déclare la propriété CSS margin-top */
+  margin-top: 3px;
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.page-actions {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS flex-wrap */
+  flex-wrap: wrap;
+  /* Déclare la propriété CSS gap */
+  gap: 8px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.summary-strip {
+  /* Déclare la propriété CSS display */
+  display: grid;
+  /* Déclare la propriété CSS grid-template-columns */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  /* Déclare la propriété CSS max-width */
+  max-width: 1080px;
+  /* Déclare la propriété CSS margin-bottom */
+  margin-bottom: 16px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid var(--line);
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius);
+  /* Déclare la propriété CSS background */
+  background: var(--surface);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.summary-item {
+  /* Déclare la propriété CSS min-width */
+  min-width: 0;
+  /* Déclare la propriété CSS padding */
+  padding: 14px 16px;
+  /* Déclare la propriété CSS border-right */
+  border-right: 1px solid var(--line-soft);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.summary-item:last-child {
+  /* Déclare la propriété CSS border-right */
+  border-right: 0;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.summary-label {
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 11px;
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 600;
+  /* Déclare la propriété CSS letter-spacing */
+  letter-spacing: 0.02em;
+  /* Déclare la propriété CSS text-transform */
+  text-transform: uppercase;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.summary-value {
+  /* Déclare la propriété CSS display */
+  display: block;
+  /* Déclare la propriété CSS margin-top */
+  margin-top: 4px;
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+  /* Déclare la propriété CSS font-family */
+  font-family: var(--font-mono);
+  /* Déclare la propriété CSS font-size */
+  font-size: 24px;
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 500;
+  /* Déclare la propriété CSS font-variant-numeric */
+  font-variant-numeric: tabular-nums;
+  /* Déclare la propriété CSS line-height */
+  line-height: 1.2;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.summary-note {
+  /* Déclare la propriété CSS display */
+  display: block;
+  /* Déclare la propriété CSS margin-top */
+  margin-top: 3px;
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 11px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.panel-grid {
+  /* Déclare la propriété CSS display */
+  display: grid;
+  /* Déclare la propriété CSS grid-template-columns */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* Déclare la propriété CSS align-items */
+  align-items: start;
+  /* Déclare la propriété CSS gap */
+  gap: 16px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.panel-grid-3 {
+  /* Déclare la propriété CSS grid-template-columns */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.panel-grid .panel {
+  /* Déclare la propriété CSS margin-bottom */
+  margin-bottom: 0;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.panel {
+  /* Déclare la propriété CSS min-width */
+  min-width: 0;
+  /* Déclare la propriété CSS margin-bottom */
+  margin-bottom: 16px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid var(--line);
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius);
+  /* Déclare la propriété CSS background */
+  background: var(--surface);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.panel-narrow {
+  /* Déclare la propriété CSS max-width */
+  max-width: 720px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.panel-spaced {
+  /* Déclare la propriété CSS margin-top */
+  margin-top: 16px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.panel-head {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS justify-content */
+  justify-content: space-between;
+  /* Déclare la propriété CSS gap */
+  gap: 12px;
+  /* Déclare la propriété CSS padding */
+  padding: 12px 16px;
+  /* Déclare la propriété CSS border-bottom */
+  border-bottom: 1px solid var(--line-soft);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.panel-head h3 {
+  /* Déclare la propriété CSS font-size */
+  font-size: 15px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.panel-head p {
+  /* Déclare la propriété CSS margin-top */
+  margin-top: 2px;
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.panel-body {
+  /* Déclare la propriété CSS padding */
+  padding: 16px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.panel-body-flush {
+  /* Déclare la propriété CSS padding */
+  padding: 0;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.table-wrap {
+  /* Déclare la propriété CSS width */
+  width: 100%;
+  /* Déclare la propriété CSS overflow-x */
+  overflow-x: auto;
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+.data-table,
+/* Sélecteur CSS: début de bloc de styles */
+.mini-table {
+  /* Déclare la propriété CSS width */
+  width: 100%;
+  /* Déclare la propriété CSS border-collapse */
+  border-collapse: collapse;
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+.data-table th,
+/* Sélecteur CSS: début de bloc de styles */
+.mini-table th {
+  /* Déclare la propriété CSS padding */
+  padding: 9px 12px;
+  /* Déclare la propriété CSS border-bottom */
+  border-bottom: 1px solid var(--line);
+  /* Déclare la propriété CSS background */
+  background: var(--surface-2);
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 600;
+  /* Déclare la propriété CSS text-align */
+  text-align: left;
+  /* Déclare la propriété CSS white-space */
+  white-space: nowrap;
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+.data-table td,
+/* Sélecteur CSS: début de bloc de styles */
+.mini-table td {
+  /* Déclare la propriété CSS padding */
+  padding: 10px 12px;
+  /* Déclare la propriété CSS border-bottom */
+  border-bottom: 1px solid var(--line-soft);
+  /* Déclare la propriété CSS vertical-align */
+  vertical-align: middle;
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+.data-table tbody tr:last-child td,
+/* Sélecteur CSS: début de bloc de styles */
+.mini-table tbody tr:last-child td {
+  /* Déclare la propriété CSS border-bottom */
+  border-bottom: 0;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.data-table tbody tr:hover {
+  /* Déclare la propriété CSS background */
+  background: var(--surface-2);
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+.data-table th:last-child,
+/* Sélecteur CSS: début de bloc de styles */
+.data-table td:last-child {
+  /* Déclare la propriété CSS position */
+  position: sticky;
+  /* Déclare la propriété CSS right */
+  right: 0;
+  /* Déclare la propriété CSS background */
+  background: var(--surface);
+  /* Déclare la propriété CSS box-shadow */
+  box-shadow: -8px 0 8px -8px rgba(16, 31, 56, 0.22);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.data-table th:last-child {
+  /* Déclare la propriété CSS background */
+  background: var(--surface-2);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.data-table tbody tr:hover td:last-child {
+  /* Déclare la propriété CSS background */
+  background: var(--surface-2);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.row-title {
+  /* Déclare la propriété CSS display */
+  display: block;
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 600;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.row-sub {
+  /* Déclare la propriété CSS display */
+  display: block;
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.status {
+  /* Déclare la propriété CSS display */
+  display: inline-flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS gap */
+  gap: 6px;
+  /* Déclare la propriété CSS padding */
+  padding: 3px 8px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid var(--line);
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS font-size */
+  font-size: 11px;
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 600;
+  /* Déclare la propriété CSS line-height */
+  line-height: 1.4;
+  /* Déclare la propriété CSS white-space */
+  white-space: nowrap;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.status .icon {
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.status-pending {
+  /* Déclare la propriété CSS border-color */
+  border-color: #e6d39b;
+  /* Déclare la propriété CSS background */
+  background: var(--warning-soft);
+  /* Déclare la propriété CSS color */
+  color: var(--warning);
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+.status-valid,
+/* Sélecteur CSS: début de bloc de styles */
+.status-active {
+  /* Déclare la propriété CSS border-color */
+  border-color: #c7decf;
+  /* Déclare la propriété CSS background */
+  background: var(--success-soft);
+  /* Déclare la propriété CSS color */
+  color: var(--success);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.status-rejected {
+  /* Déclare la propriété CSS border-color */
+  border-color: #e3c0bb;
+  /* Déclare la propriété CSS background */
+  background: var(--danger-soft);
+  /* Déclare la propriété CSS color */
+  color: var(--danger);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.status-inactive {
+  /* Déclare la propriété CSS border-color */
+  border-color: var(--line);
+  /* Déclare la propriété CSS background */
+  background: var(--surface-3);
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.detail-grid {
+  /* Déclare la propriété CSS display */
+  display: grid;
+  /* Déclare la propriété CSS grid-template-columns */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* Déclare la propriété CSS gap */
+  gap: 15px 22px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.detail-grid dt {
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.detail-grid dd {
+  /* Déclare la propriété CSS margin-top */
+  margin-top: 2px;
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 500;
+  /* Déclare la propriété CSS overflow-wrap */
+  overflow-wrap: anywhere;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.list {
+  /* Déclare la propriété CSS display */
+  display: grid;
+  /* Déclare la propriété CSS gap */
+  gap: 8px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.list-row {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS justify-content */
+  justify-content: space-between;
+  /* Déclare la propriété CSS gap */
+  gap: 12px;
+  /* Déclare la propriété CSS padding */
+  padding: 9px 11px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid var(--line-soft);
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.list-content {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS flex-direction */
+  flex-direction: column;
+  /* Déclare la propriété CSS min-width */
+  min-width: 0;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.list-content strong {
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 600;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.list-content small {
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+.alert,
+/* Sélecteur CSS: début de bloc de styles */
+.notice {
+  /* Déclare la propriété CSS padding */
+  padding: 10px 12px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid var(--line-soft);
+  /* Déclare la propriété CSS border-left-width */
+  border-left-width: 3px;
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.alert {
+  /* Déclare la propriété CSS margin-bottom */
+  margin-bottom: 16px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.notice {
+  /* Déclare la propriété CSS margin-top */
+  margin-top: 16px;
+  /* Déclare la propriété CSS border-color */
+  border-color: var(--line-soft);
+  /* Déclare la propriété CSS border-left-color */
+  border-left-color: var(--primary);
+  /* Déclare la propriété CSS background */
+  background: var(--surface-2);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.alert-success {
+  /* Déclare la propriété CSS border-color */
+  border-color: #c7decf;
+  /* Déclare la propriété CSS border-left-color */
+  border-left-color: var(--success);
+  /* Déclare la propriété CSS background */
+  background: var(--success-soft);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.alert-error {
+  /* Déclare la propriété CSS border-color */
+  border-color: #e3c0bb;
+  /* Déclare la propriété CSS border-left-color */
+  border-left-color: var(--danger);
+  /* Déclare la propriété CSS background */
+  background: var(--danger-soft);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.alert-info {
+  /* Déclare la propriété CSS border-color */
+  border-color: #cfe0c2;
+  /* Déclare la propriété CSS border-left-color */
+  border-left-color: var(--primary);
+  /* Déclare la propriété CSS background */
+  background: var(--primary-soft);
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+.alert strong,
+/* Sélecteur CSS: début de bloc de styles */
+.notice strong {
+  /* Déclare la propriété CSS display */
+  display: block;
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+.alert p,
+/* Sélecteur CSS: début de bloc de styles */
+.notice p {
+  /* Déclare la propriété CSS margin-top */
+  margin-top: 2px;
+  /* Déclare la propriété CSS color */
+  color: var(--ink-2);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.empty-line {
+  /* Déclare la propriété CSS padding */
+  padding: 16px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid var(--line-soft);
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS background */
+  background: var(--surface-2);
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+  /* Déclare la propriété CSS text-align */
+  text-align: left;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.empty-line a {
+  /* Déclare la propriété CSS margin-left */
+  margin-left: 6px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.log-list {
+  /* Déclare la propriété CSS margin */
+  margin: 0;
+  /* Déclare la propriété CSS padding */
+  padding: 0;
+  /* Déclare la propriété CSS list-style */
+  list-style: none;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.log-list li {
+  /* Déclare la propriété CSS display */
+  display: grid;
+  /* Déclare la propriété CSS grid-template-columns */
+  grid-template-columns: 130px minmax(0, 1fr);
+  /* Déclare la propriété CSS gap */
+  gap: 12px;
+  /* Déclare la propriété CSS padding */
+  padding: 9px 0;
+  /* Déclare la propriété CSS border-bottom */
+  border-bottom: 1px solid var(--line-soft);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.log-list li:last-child {
+  /* Déclare la propriété CSS border-bottom */
+  border-bottom: 0;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.log-date {
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.log-body strong {
+  /* Déclare la propriété CSS display */
+  display: block;
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.log-body p {
+  /* Déclare la propriété CSS color */
+  color: var(--ink-2);
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.log-body small {
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 11px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.filter-bar {
+  /* Déclare la propriété CSS display */
+  display: grid;
+  /* Déclare la propriété CSS grid-template-columns */
+  grid-template-columns: minmax(200px, 1.4fr) repeat(3, minmax(130px, 1fr)) auto;
+  /* Déclare la propriété CSS align-items */
+  align-items: end;
+  /* Déclare la propriété CSS gap */
+  gap: 10px;
+  /* Déclare la propriété CSS padding */
+  padding: 14px;
+  /* Déclare la propriété CSS margin-bottom */
+  margin-bottom: 16px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid var(--line);
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius);
+  /* Déclare la propriété CSS background */
+  background: var(--surface);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.filter-actions {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS gap */
+  gap: 8px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.pagination {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS justify-content */
+  justify-content: space-between;
+  /* Déclare la propriété CSS gap */
+  gap: 10px;
+  /* Déclare la propriété CSS padding */
+  padding: 12px 16px;
+  /* Déclare la propriété CSS border-top */
+  border-top: 1px solid var(--line-soft);
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.pagination-links {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS flex-wrap */
+  flex-wrap: wrap;
+  /* Déclare la propriété CSS gap */
+  gap: 4px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.pagination a {
+  /* Déclare la propriété CSS display */
+  display: inline-grid;
+  /* Déclare la propriété CSS place-items */
+  place-items: center;
+  /* Déclare la propriété CSS min-width */
+  min-width: 34px;
+  /* Déclare la propriété CSS height */
+  height: 34px;
+  /* Déclare la propriété CSS padding */
+  padding: 0 8px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid var(--line);
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS color */
+  color: var(--ink-2);
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 500;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.pagination a:hover {
+  /* Déclare la propriété CSS background */
+  background: var(--surface-2);
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+  /* Déclare la propriété CSS text-decoration */
+  text-decoration: none;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.pagination a.active {
+  /* Déclare la propriété CSS border-color */
+  border-color: var(--primary);
+  /* Déclare la propriété CSS background */
+  background: var(--primary);
+  /* Déclare la propriété CSS color */
+  color: #ffffff;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.decision-grid {
+  /* Déclare la propriété CSS display */
+  display: grid;
+  /* Déclare la propriété CSS grid-template-columns */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* Déclare la propriété CSS gap */
+  gap: 10px;
+  /* Déclare la propriété CSS margin-bottom */
+  margin-bottom: 16px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.decision-option {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS gap */
+  gap: 9px;
+  /* Déclare la propriété CSS padding */
+  padding: 11px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid var(--line);
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS cursor */
+  cursor: pointer;
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 600;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.decision-option:has(input:checked) {
+  /* Déclare la propriété CSS border-color */
+  border-color: var(--primary);
+  /* Déclare la propriété CSS background */
+  background: var(--primary-soft);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.decision-option-danger:has(input:checked) {
+  /* Déclare la propriété CSS border-color */
+  border-color: var(--danger);
+  /* Déclare la propriété CSS background */
+  background: var(--danger-soft);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.decision-option input {
+  /* Déclare la propriété CSS width */
+  width: 16px;
+  /* Déclare la propriété CSS height */
+  height: 16px;
+  /* Déclare la propriété CSS accent-color */
+  accent-color: var(--primary);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.upload-zone {
+  /* Déclare la propriété CSS display */
+  display: grid;
+  /* Déclare la propriété CSS gap */
+  gap: 12px;
+  /* Déclare la propriété CSS margin-top */
+  margin-top: 16px;
+  /* Déclare la propriété CSS padding-top */
+  padding-top: 16px;
+  /* Déclare la propriété CSS border-top */
+  border-top: 1px solid var(--line-soft);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.inline-confirm {
+  /* Déclare la propriété CSS display */
+  display: none;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS justify-content */
+  justify-content: space-between;
+  /* Déclare la propriété CSS gap */
+  gap: 12px;
+  /* Déclare la propriété CSS margin-top */
+  margin-top: 16px;
+  /* Déclare la propriété CSS padding */
+  padding: 10px 12px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid #e6d39b;
+  /* Déclare la propriété CSS border-left-width */
+  border-left-width: 3px;
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS background */
+  background: var(--warning-soft);
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.inline-confirm.is-visible {
+  /* Déclare la propriété CSS display */
+  display: flex;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.inline-confirm p {
+  /* Déclare la propriété CSS color */
+  color: var(--ink);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.inline-confirm-actions {
+  /* Déclare la propriété CSS display */
+  display: flex;
+  /* Déclare la propriété CSS gap */
+  gap: 8px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.error-page {
+  /* Déclare la propriété CSS display */
+  display: grid;
+  /* Déclare la propriété CSS place-items */
+  place-items: center;
+  /* Déclare la propriété CSS min-height */
+  min-height: 100dvh;
+  /* Déclare la propriété CSS padding */
+  padding: 24px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.error-box {
+  /* Déclare la propriété CSS width */
+  width: 100%;
+  /* Déclare la propriété CSS max-width */
+  max-width: 520px;
+  /* Déclare la propriété CSS padding */
+  padding: 20px 22px;
+  /* Déclare la propriété CSS border */
+  border: 1px solid var(--line);
+  /* Déclare la propriété CSS border-left */
+  border-left: 3px solid var(--primary);
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS background */
+  background: var(--surface);
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.error-code {
+  /* Déclare la propriété CSS display */
+  display: block;
+  /* Déclare la propriété CSS margin-bottom */
+  margin-bottom: 5px;
+  /* Déclare la propriété CSS color */
+  color: var(--primary);
+  /* Déclare la propriété CSS font-size */
+  font-size: 12px;
+  /* Déclare la propriété CSS font-weight */
+  font-weight: 600;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.error-box h1 {
+  /* Déclare la propriété CSS font-size */
+  font-size: 22px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.error-box p {
+  /* Déclare la propriété CSS margin */
+  margin: 8px 0 18px;
+  /* Déclare la propriété CSS color */
+  color: var(--muted);
+  /* Déclare la propriété CSS font-size */
+  font-size: 13px;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+@media (max-width: 1100px) {
+  /* Sélecteur CSS: début de bloc de styles */
+  .filter-bar {
+    /* Déclare la propriété CSS grid-template-columns */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .filter-actions {
+    /* Déclare la propriété CSS grid-column */
+    grid-column: 1 / -1;
+  /* Fin de bloc CSS */
+  }
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+@media (max-width: 980px) {
+  /* Sélecteur CSS: début de bloc de styles */
+  body.nav-open {
+    /* Déclare la propriété CSS overflow */
+    overflow: hidden;
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .app-shell {
+    /* Déclare la propriété CSS grid-template-columns */
+    grid-template-columns: minmax(0, 1fr);
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .sidebar {
+    /* Déclare la propriété CSS position */
+    position: fixed;
+    /* Déclare la propriété CSS z-index */
+    z-index: 60;
+    /* Déclare la propriété CSS width */
+    width: var(--sidebar-w);
+    /* Déclare la propriété CSS transform */
+    transform: translateX(-100%);
+    /* Déclare la propriété CSS transition */
+    transition: transform 0.18s ease;
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  body.nav-open .sidebar {
+    /* Déclare la propriété CSS transform */
+    transform: translateX(0);
+    /* Déclare la propriété CSS box-shadow */
+    box-shadow: var(--shadow-drawer);
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .sidebar-backdrop {
+    /* Déclare la propriété CSS position */
+    position: fixed;
+    /* Déclare la propriété CSS inset */
+    inset: 0;
+    /* Déclare la propriété CSS z-index */
+    z-index: 55;
+    /* Déclare la propriété CSS display */
+    display: block;
+    /* Déclare la propriété CSS visibility */
+    visibility: hidden;
+    /* Déclare la propriété CSS background */
+    background: rgba(11, 90, 43, 0.42);
+    /* Déclare la propriété CSS opacity */
+    opacity: 0;
+    /* Déclare la propriété CSS transition */
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  body.nav-open .sidebar-backdrop {
+    /* Déclare la propriété CSS visibility */
+    visibility: visible;
+    /* Déclare la propriété CSS opacity */
+    opacity: 1;
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .menu-toggle {
+    /* Déclare la propriété CSS display */
+    display: inline-flex;
+  /* Fin de bloc CSS */
+  }
+
+  /* Ligne CSS */
+  .topbar,
+  /* Sélecteur CSS: début de bloc de styles */
+  .content {
+    /* Déclare la propriété CSS padding-left */
+    padding-left: 18px;
+    /* Déclare la propriété CSS padding-right */
+    padding-right: 18px;
+  /* Fin de bloc CSS */
+  }
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+@media (max-width: 720px) {
+  /* Sélecteur CSS: début de bloc de styles */
+  .page-head {
+    /* Déclare la propriété CSS flex-direction */
+    flex-direction: column;
+  /* Fin de bloc CSS */
+  }
+
+  /* Ligne CSS */
+  .panel-grid,
+  /* Ligne CSS */
+  .panel-grid-3,
+  /* Ligne CSS */
+  .form-grid,
+  /* Ligne CSS */
+  .detail-grid,
+  /* Sélecteur CSS: début de bloc de styles */
+  .decision-grid {
+    /* Déclare la propriété CSS grid-template-columns */
+    grid-template-columns: minmax(0, 1fr);
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .filter-bar {
+    /* Déclare la propriété CSS grid-template-columns */
+    grid-template-columns: minmax(0, 1fr);
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .filter-actions {
+    /* Déclare la propriété CSS grid-column */
+    grid-column: auto;
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .summary-strip {
+    /* Déclare la propriété CSS grid-template-columns */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .summary-item:nth-child(2n) {
+    /* Déclare la propriété CSS border-right */
+    border-right: 0;
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .summary-item:nth-child(-n + 2) {
+    /* Déclare la propriété CSS border-bottom */
+    border-bottom: 1px solid var(--line-soft);
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .topbar-meta {
+    /* Déclare la propriété CSS display */
+    display: none;
+  /* Fin de bloc CSS */
+  }
+
+  /* Ligne CSS */
+  .topbar,
+  /* Sélecteur CSS: début de bloc de styles */
+  .content {
+    /* Déclare la propriété CSS padding-left */
+    padding-left: 14px;
+    /* Déclare la propriété CSS padding-right */
+    padding-right: 14px;
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .content {
+    /* Déclare la propriété CSS padding-top */
+    padding-top: 18px;
+  /* Fin de bloc CSS */
+  }
+
+  /* Ligne CSS */
+  .btn-sm,
+  /* Ligne CSS */
+  .pagination a,
+  /* Sélecteur CSS: début de bloc de styles */
+  .menu-toggle {
+    /* Déclare la propriété CSS min-height */
+    min-height: 44px;
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .pagination a {
+    /* Déclare la propriété CSS min-width */
+    min-width: 44px;
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .inline-confirm {
+    /* Déclare la propriété CSS flex-direction */
+    flex-direction: column;
+    /* Déclare la propriété CSS align-items */
+    align-items: stretch;
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .inline-confirm-actions {
+    /* Déclare la propriété CSS flex-wrap */
+    flex-wrap: wrap;
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .inline-confirm-actions .btn {
+    /* Déclare la propriété CSS flex */
+    flex: 1;
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .log-list li {
+    /* Déclare la propriété CSS grid-template-columns */
+    grid-template-columns: minmax(0, 1fr);
+    /* Déclare la propriété CSS gap */
+    gap: 2px;
+  /* Fin de bloc CSS */
+  }
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+@media (max-width: 480px) {
+  /* Sélecteur CSS: début de bloc de styles */
+  .auth-page {
+    /* Déclare la propriété CSS padding */
+    padding: 24px 12px;
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .auth-card {
+    /* Déclare la propriété CSS padding */
+    padding: 24px 18px;
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .page-title {
+    /* Déclare la propriété CSS font-size */
+    font-size: 20px;
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .summary-strip {
+    /* Déclare la propriété CSS grid-template-columns */
+    grid-template-columns: minmax(0, 1fr);
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .summary-item {
+    /* Déclare la propriété CSS border-right */
+    border-right: 0;
+    /* Déclare la propriété CSS border-bottom */
+    border-bottom: 1px solid var(--line-soft);
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .summary-item:last-child {
+    /* Déclare la propriété CSS border-bottom */
+    border-bottom: 0;
+  /* Fin de bloc CSS */
+  }
+
+  /* Sélecteur CSS: début de bloc de styles */
+  .pagination {
+    /* Déclare la propriété CSS flex-direction */
+    flex-direction: column;
+    /* Déclare la propriété CSS align-items */
+    align-items: flex-start;
+  /* Fin de bloc CSS */
+  }
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+@media (prefers-reduced-motion: reduce) {
+  /* Ligne CSS */
+  *,
+  /* Ligne CSS */
+  *::before,
+  /* Sélecteur CSS: début de bloc de styles */
+  *::after {
+    /* Déclare la propriété CSS transition-duration */
+    transition-duration: 0.01ms !important;
+    /* Déclare la propriété CSS animation-duration */
+    animation-duration: 0.01ms !important;
+    /* Déclare la propriété CSS animation-iteration-count */
+    animation-iteration-count: 1 !important;
+  /* Fin de bloc CSS */
+  }
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.user-card .nav-link-icon {
+  /* Déclare la propriété CSS margin-left */
+  margin-left: auto;
+  /* Déclare la propriété CSS width */
+  width: 34px;
+  /* Déclare la propriété CSS height */
+  height: 34px;
+  /* Déclare la propriété CSS padding */
+  padding: 0;
+  /* Déclare la propriété CSS justify-content */
+  justify-content: center;
+  /* Déclare la propriété CSS border-radius */
+  border-radius: var(--radius-control);
+  /* Déclare la propriété CSS color */
+  color: var(--sidebar-fg);
+/* Fin de bloc CSS */
+}
+
+/* Ligne CSS */
+.user-card .nav-link-icon:hover,
+/* Sélecteur CSS: début de bloc de styles */
+.user-card .nav-link-icon.active {
+  /* Déclare la propriété CSS background */
+  background: rgba(255, 255, 255, 0.1);
+  /* Déclare la propriété CSS color */
+  color: #ffffff;
+  /* Déclare la propriété CSS text-decoration */
+  text-decoration: none;
+/* Fin de bloc CSS */
+}
+
+/* Sélecteur CSS: début de bloc de styles */
+.topbar-actions {
+  /* Déclare la propriété CSS margin-left */
+  margin-left: auto;
+  /* Déclare la propriété CSS display */
+  display: inline-flex;
+  /* Déclare la propriété CSS align-items */
+  align-items: center;
+  /* Déclare la propriété CSS gap */
+  gap: 10px;
+/* Fin de bloc CSS */
+}

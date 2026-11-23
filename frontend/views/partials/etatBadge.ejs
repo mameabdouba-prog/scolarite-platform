@@ -1,0 +1,36 @@
+<%# Commentaire: Exécute du code JavaScript EJS %>
+<%
+  <%# Commentaire: Contenu texte/template %>
+  const labels = typeof etatLabels !== 'undefined'
+    <%# Commentaire: Contenu texte/template %>
+    ? etatLabels
+    <%# Commentaire: Contenu texte/template %>
+    : { EN_ATTENTE: 'En attente', VALIDE: 'Validé', REJETE: 'Rejeté', SANS_DOSSIER: 'Aucun dossier' };
+  <%# Commentaire: Contenu texte/template %>
+  const statusMap = {
+    <%# Commentaire: Contenu texte/template %>
+    EN_ATTENTE: 'status-pending',
+    <%# Commentaire: Contenu texte/template %>
+    VALIDE: 'status-valid',
+    <%# Commentaire: Contenu texte/template %>
+    REJETE: 'status-rejected',
+    <%# Commentaire: Contenu texte/template %>
+    SANS_DOSSIER: 'status-inactive',
+  <%# Commentaire: Contenu texte/template %>
+  };
+  <%# Commentaire: Contenu texte/template %>
+  const iconMap = {
+    <%# Commentaire: Contenu texte/template %>
+    EN_ATTENTE: 'clock',
+    <%# Commentaire: Contenu texte/template %>
+    VALIDE: 'check-circle',
+    <%# Commentaire: Contenu texte/template %>
+    REJETE: 'x-circle',
+    <%# Commentaire: Contenu texte/template %>
+    SANS_DOSSIER: 'info',
+  <%# Commentaire: Contenu texte/template %>
+  };
+<%# Commentaire: Contenu texte/template %>
+%>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<span class="status <%= statusMap[etat] || 'status-inactive' %>"><%- icon(iconMap[etat] || 'info', 'icon-sm') %><%= labels[etat] || etat %></span>

@@ -1,0 +1,10 @@
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<div class="summary-item">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <span class="summary-label"><%= label %></span>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <strong class="summary-value"><%= value %></strong>
+  <%# Commentaire: Condition EJS: affiche selon condition %>
+  <% if (typeof note !== 'undefined' && note) { %><span class="summary-note"><%= note %></span><% } %>
+<%# Commentaire: Ferme une balise HTML %>
+</div>

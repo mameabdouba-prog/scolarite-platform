@@ -1,0 +1,170 @@
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/head') %>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/sidebar') %>
+<%# Commentaire: Exécute du code JavaScript EJS %>
+<%
+  <%# Commentaire: Contenu texte/template %>
+  function pageUrl(target) {
+    <%# Commentaire: Contenu texte/template %>
+    const params = new URLSearchParams();
+    <%# Commentaire: Contenu texte/template %>
+    params.set('page', String(target));
+    <%# Commentaire: Contenu texte/template %>
+    params.set('limit', String(pagination.limit));
+    <%# Commentaire: Contenu texte/template %>
+    ['etat', 'filiere', 'niveau', 'search'].forEach(function (key) {
+      <%# Commentaire: Contenu texte/template %>
+      if (filters[key]) params.set(key, filters[key]);
+    <%# Commentaire: Contenu texte/template %>
+    });
+    <%# Commentaire: Contenu texte/template %>
+    return '/agent/dossiers?' + params.toString();
+  <%# Commentaire: Contenu texte/template %>
+  }
+<%# Commentaire: Contenu texte/template %>
+%>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="page-head">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div><h1 class="page-title">Dossiers d’inscription</h1><p class="page-subtitle"><%= pagination.total %> dossier(s) trouvé(s) pour les filtres sélectionnés.</p></div>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<form method="get" action="/agent/dossiers" class="filter-bar">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="field">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <label for="search">Rechercher</label>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <input id="search" name="search" value="<%= filters.search %>" placeholder="Nom, numéro ou référence">
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="field">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <label for="etat">État</label>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <select id="etat" name="etat">
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <option value="">Tous les états</option>
+      <%# Commentaire: Exécute du code JavaScript EJS %>
+      <% facets.etats.forEach(function (e) { %><option value="<%= e %>" <%= filters.etat === e ? 'selected' : '' %>><%= etatLabels[e] || e %></option><% }); %>
+    <%# Commentaire: Ferme une balise HTML %>
+    </select>
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="field">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <label for="filiere">Filière</label>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <select id="filiere" name="filiere">
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <option value="">Toutes les filières</option>
+      <%# Commentaire: Exécute du code JavaScript EJS %>
+      <% facets.filieres.forEach(function (f) { %><option value="<%= f %>" <%= filters.filiere === f ? 'selected' : '' %>><%= f %></option><% }); %>
+    <%# Commentaire: Ferme une balise HTML %>
+    </select>
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="field">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <label for="niveau">Niveau</label>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <select id="niveau" name="niveau">
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <option value="">Tous les niveaux</option>
+      <%# Commentaire: Exécute du code JavaScript EJS %>
+      <% facets.niveaux.forEach(function (n) { %><option value="<%= n %>" <%= filters.niveau === n ? 'selected' : '' %>><%= n %></option><% }); %>
+    <%# Commentaire: Ferme une balise HTML %>
+    </select>
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="filter-actions">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <button class="btn btn-primary" type="submit"><%- icon('search') %> Filtrer</button>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <a class="btn btn-secondary" href="/agent/dossiers">Réinitialiser</a>
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+<%# Commentaire: Ferme une balise HTML %>
+</form>
+
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="panel panel-spaced">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="panel-head"><div><h3>Résultats</h3><p>Page <%= pagination.page %> sur <%= pagination.pages %></p></div></div>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="panel-body panel-body-flush table-wrap">
+    <%# Commentaire: Condition EJS: affiche selon condition %>
+    <% if (!dossiers.length) { %>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <p class="empty-line">Aucun dossier ne correspond aux filtres. Modifiez la recherche puis relancez le filtrage.</p>
+    <%# Commentaire: Branche alternative EJS %>
+    <% } else { %>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <table class="data-table">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <thead><tr><th>Référence</th><th>Étudiant</th><th>Filière</th><th>Niveau</th><th>Année</th><th>État</th><th>Soumis le</th><th class="text-right">Action</th></tr></thead>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <tbody>
+          <%# Commentaire: Exécute du code JavaScript EJS %>
+          <% dossiers.forEach(function (d) { %>
+            <%# Commentaire: Ouvre/contient une balise HTML %>
+            <tr>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td class="tabular"><%= d.reference_dossier %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><span class="row-title"><%= d.etudiant_prenom %> <%= d.etudiant_nom %></span><small class="row-sub tabular"><%= d.numero_etudiant %></small></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><%= d.filiere %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><%= d.niveau %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><%= d.annee_universitaire %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><%- include('../partials/etatBadge', { etat: d.etat }) %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><%= formatDate(d.date_soumission) %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td class="text-right"><a class="btn btn-sm btn-primary" href="/agent/dossiers/<%= d.id %>"><%- icon('eye') %> Instruire</a></td>
+            <%# Commentaire: Ferme une balise HTML %>
+            </tr>
+          <%# Commentaire: Boucle/fermeture de bloc EJS %>
+          <% }); %>
+        <%# Commentaire: Ferme une balise HTML %>
+        </tbody>
+      <%# Commentaire: Ferme une balise HTML %>
+      </table>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="pagination">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <span>Page <%= pagination.page %> sur <%= pagination.pages %></span>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <div class="pagination-links">
+          <%# Commentaire: Condition EJS: affiche selon condition %>
+          <% if (pagination.page > 1) { %><a href="<%= pageUrl(pagination.page - 1) %>"><%- icon('caret-left', 'icon-sm') %> Précédent</a><% } %>
+          <%# Commentaire: Boucle/fermeture de bloc EJS %>
+          <% for (let p = 1; p <= pagination.pages; p++) { %>
+            <%# Commentaire: Ouvre/contient une balise HTML %>
+            <a class="<%= p === pagination.page ? 'active' : '' %>" href="<%= pageUrl(p) %>"><%= p %></a>
+          <%# Commentaire: Exécute du code JavaScript EJS %>
+          <% } %>
+          <%# Commentaire: Condition EJS: affiche selon condition %>
+          <% if (pagination.page < pagination.pages) { %><a href="<%= pageUrl(pagination.page + 1) %>">Suivant <%- icon('caret-right', 'icon-sm') %></a><% } %>
+        <%# Commentaire: Ferme une balise HTML %>
+        </div>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+    <%# Commentaire: Exécute du code JavaScript EJS %>
+    <% } %>
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/footer') %>

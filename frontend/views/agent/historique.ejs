@@ -1,0 +1,56 @@
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/head') %>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/sidebar') %>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="page-head">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div><h1 class="page-title">Historique des actions</h1><p class="page-subtitle">50 dernières opérations enregistrées dans le service.</p></div>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="panel">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="panel-body panel-body-flush table-wrap">
+    <%# Commentaire: Condition EJS: affiche selon condition %>
+    <% if (!actions.length) { %>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <p class="empty-line">Aucune action enregistrée.</p>
+    <%# Commentaire: Branche alternative EJS %>
+    <% } else { %>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <table class="data-table">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <thead><tr><th>Date</th><th>Action</th><th>Description</th><th>Utilisateur</th><th>Dossier</th></tr></thead>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <tbody>
+          <%# Commentaire: Exécute du code JavaScript EJS %>
+          <% actions.forEach(function (a) { %>
+            <%# Commentaire: Ouvre/contient une balise HTML %>
+            <tr>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td class="tabular"><%= formatDate(a.created_at) %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><span class="row-title"><%= a.action %></span></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><%= a.description %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td><%= a.utilisateur_type %></td>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <td class="tabular"><%= a.reference_dossier || '—' %></td>
+            <%# Commentaire: Ferme une balise HTML %>
+            </tr>
+          <%# Commentaire: Boucle/fermeture de bloc EJS %>
+          <% }); %>
+        <%# Commentaire: Ferme une balise HTML %>
+        </tbody>
+      <%# Commentaire: Ferme une balise HTML %>
+      </table>
+    <%# Commentaire: Exécute du code JavaScript EJS %>
+    <% } %>
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/footer') %>

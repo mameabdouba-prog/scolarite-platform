@@ -1,0 +1,55 @@
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/head') %>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<div class="auth-page">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="auth-card">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <a class="auth-brand" href="/login">
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <span class="auth-brand-mark"><img src="/images/USSEIN-LOGO-copie.png" alt="Logo USSEIN"></span>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <span class="auth-brand-text"><strong>SCOLARITÉ</strong><small>USSEIN</small></span>
+    <%# Commentaire: Ferme une balise HTML %>
+    </a>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <h1>Connexion à votre espace</h1>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <p>Identifiants personnels exigés pour accéder au service de la scolarité.</p>
+
+    <%# Commentaire: Inclut un partial/template EJS %>
+    <%- include('../partials/alerts') %>
+
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <form method="post" action="/login" class="form-stack">
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="field">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <label for="email">Adresse e-mail</label>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <input id="email" name="email" type="email" value="<%= email || '' %>" placeholder="Adresse e-mail institutionnelle" autocomplete="username" required>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="field">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <label for="password">Mot de passe</label>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <input id="password" name="password" type="password" placeholder="Mot de passe" autocomplete="current-password" required>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <button class="btn btn-primary btn-block" type="submit"><%- icon('sign-in') %> Se connecter</button>
+    <%# Commentaire: Ferme une balise HTML %>
+    </form>
+
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <p class="auth-note">Pas encore de compte ? <a href="/register">Créer un compte étudiant</a></p>
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+<%# Commentaire: Ferme une balise HTML %>
+</div>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/authFooter') %>

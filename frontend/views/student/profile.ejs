@@ -1,0 +1,98 @@
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/head') %>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/sidebar') %>
+<%# Commentaire: Exécute du code JavaScript EJS %>
+<%
+  <%# Commentaire: Contenu texte/template %>
+  const v = (name) => (values && values[name] != null ? values[name] : (etudiant ? etudiant[name] : ''));
+<%# Commentaire: Contenu texte/template %>
+%>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="page-head">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div><h1 class="page-title">Informations personnelles</h1><p class="page-subtitle">Le numéro étudiant est attribué à l’inscription et ne peut pas être modifié.</p></div>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="panel panel-narrow">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="panel-head"><div><h3>Modifier le profil</h3><p>Les champs marqués d’un astérisque sont obligatoires.</p></div></div>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="panel-body">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <form method="post" action="/etudiant/profil" class="form-grid">
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="field">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <label for="numeroEtudiant">Numéro étudiant</label>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <input id="numeroEtudiant" class="tabular" value="<%= etudiant.numero_etudiant %>" disabled>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="field">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <label for="email">Adresse e-mail *</label>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <input id="email" name="email" type="email" value="<%= v('email') %>" required>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="field">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <label for="nom">Nom *</label>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <input id="nom" name="nom" value="<%= v('nom') %>" required>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="field">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <label for="prenom">Prénom *</label>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <input id="prenom" name="prenom" value="<%= v('prenom') %>" required>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="field">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <label for="filiere">Filière *</label>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <select id="filiere" name="filiere" required>
+          <%# Commentaire: Exécute du code JavaScript EJS %>
+          <% filieres.forEach(function (f) { %><option value="<%= f %>" <%= v('filiere') === f ? 'selected' : '' %>><%= f %></option><% }); %>
+        <%# Commentaire: Ferme une balise HTML %>
+        </select>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="field">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <label for="niveau">Niveau *</label>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <select id="niveau" name="niveau" required>
+          <%# Commentaire: Exécute du code JavaScript EJS %>
+          <% niveaux.forEach(function (n) { %><option value="<%= n %>" <%= v('niveau') === n ? 'selected' : '' %>><%= n %></option><% }); %>
+        <%# Commentaire: Ferme une balise HTML %>
+        </select>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+      <%# Commentaire: Ouvre/contient une balise HTML %>
+      <div class="field-full form-actions">
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <button class="btn btn-primary" type="submit">Enregistrer les modifications</button>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <a class="btn btn-secondary" href="/etudiant/tableau-de-bord">Retour</a>
+      <%# Commentaire: Ferme une balise HTML %>
+      </div>
+    <%# Commentaire: Ferme une balise HTML %>
+    </form>
+  <%# Commentaire: Ferme une balise HTML %>
+  </div>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/footer') %>

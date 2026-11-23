@@ -1,0 +1,126 @@
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/head') %>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/sidebar') %>
+<%# Commentaire: Exécute du code JavaScript EJS %>
+<%
+  <%# Commentaire: Contenu texte/template %>
+  const totalDossiers = stats.parEtat.reduce(function (s, r) { return s + Number(r.total); }, 0);
+  <%# Commentaire: Contenu texte/template %>
+  const enAttente = stats.parEtat.find(function (r) { return r.etat === 'EN_ATTENTE'; });
+<%# Commentaire: Contenu texte/template %>
+%>
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<section class="page-head">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div><h1 class="page-title">Vue d’ensemble</h1><p class="page-subtitle">Données de l’année universitaire <%= currentYear %> et historique complet des comptes et demandes enregistrés.</p></div>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <a class="btn btn-primary" href="/admin/agents/nouveau"><%- icon('plus') %> Créer un agent</a>
+<%# Commentaire: Ferme une balise HTML %>
+</section>
+
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<div class="summary-strip">
+  <%# Commentaire: Inclut un partial/template EJS %>
+  <%- include('../partials/statCard', { label: 'Étudiants', value: nbEtudiants, note: 'Comptes enregistrés' }) %>
+  <%# Commentaire: Inclut un partial/template EJS %>
+  <%- include('../partials/statCard', { label: 'Agents', value: nbAgents, note: nbAgentsActifs + ' actif(s)' }) %>
+  <%# Commentaire: Inclut un partial/template EJS %>
+  <%- include('../partials/statCard', { label: 'Dossiers', value: totalDossiers, note: 'Toutes années' }) %>
+  <%# Commentaire: Inclut un partial/template EJS %>
+  <%- include('../partials/statCard', { label: 'En attente', value: enAttente ? enAttente.total : 0, note: 'À traiter' }) %>
+<%# Commentaire: Ferme une balise HTML %>
+</div>
+
+<%# Commentaire: Ouvre/contient une balise HTML %>
+<div class="panel-grid panel-grid-3">
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <section class="panel">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <div class="panel-head"><div><h3>Dossiers par état</h3><p>Effectifs par état de traitement</p></div></div>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <div class="panel-body">
+      <%# Commentaire: Condition EJS: affiche selon condition %>
+      <% if (!stats.parEtat.length) { %><p class="empty-line">Aucune donnée disponible.</p><% } else { %>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <table class="mini-table">
+          <%# Commentaire: Ouvre/contient une balise HTML %>
+          <tbody>
+            <%# Commentaire: Exécute du code JavaScript EJS %>
+            <% stats.parEtat.forEach(function (r) { %>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <tr><th scope="row"><%= etatLabels[r.etat] || r.etat %></th><td class="tabular"><%= r.total %></td></tr>
+            <%# Commentaire: Boucle/fermeture de bloc EJS %>
+            <% }); %>
+          <%# Commentaire: Ferme une balise HTML %>
+          </tbody>
+        <%# Commentaire: Ferme une balise HTML %>
+        </table>
+      <%# Commentaire: Exécute du code JavaScript EJS %>
+      <% } %>
+    <%# Commentaire: Ferme une balise HTML %>
+    </div>
+  <%# Commentaire: Ferme une balise HTML %>
+  </section>
+
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <section class="panel">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <div class="panel-head"><div><h3>Dossiers par filière</h3><p>Effectifs des demandes</p></div></div>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <div class="panel-body">
+      <%# Commentaire: Condition EJS: affiche selon condition %>
+      <% if (!stats.parFiliere.length) { %><p class="empty-line">Aucune donnée disponible.</p><% } else { %>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <table class="mini-table">
+          <%# Commentaire: Ouvre/contient une balise HTML %>
+          <tbody>
+            <%# Commentaire: Exécute du code JavaScript EJS %>
+            <% stats.parFiliere.forEach(function (r) { %>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <tr><th scope="row"><%= r.filiere %></th><td class="tabular"><%= r.total %></td></tr>
+            <%# Commentaire: Boucle/fermeture de bloc EJS %>
+            <% }); %>
+          <%# Commentaire: Ferme une balise HTML %>
+          </tbody>
+        <%# Commentaire: Ferme une balise HTML %>
+        </table>
+      <%# Commentaire: Exécute du code JavaScript EJS %>
+      <% } %>
+    <%# Commentaire: Ferme une balise HTML %>
+    </div>
+  <%# Commentaire: Ferme une balise HTML %>
+  </section>
+
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <section class="panel">
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <div class="panel-head"><div><h3>Dossiers par niveau</h3><p>Effectifs des demandes</p></div></div>
+    <%# Commentaire: Ouvre/contient une balise HTML %>
+    <div class="panel-body">
+      <%# Commentaire: Condition EJS: affiche selon condition %>
+      <% if (!stats.parNiveau.length) { %><p class="empty-line">Aucune donnée disponible.</p><% } else { %>
+        <%# Commentaire: Ouvre/contient une balise HTML %>
+        <table class="mini-table">
+          <%# Commentaire: Ouvre/contient une balise HTML %>
+          <tbody>
+            <%# Commentaire: Exécute du code JavaScript EJS %>
+            <% stats.parNiveau.forEach(function (r) { %>
+              <%# Commentaire: Ouvre/contient une balise HTML %>
+              <tr><th scope="row"><%= r.niveau %></th><td class="tabular"><%= r.total %></td></tr>
+            <%# Commentaire: Boucle/fermeture de bloc EJS %>
+            <% }); %>
+          <%# Commentaire: Ferme une balise HTML %>
+          </tbody>
+        <%# Commentaire: Ferme une balise HTML %>
+        </table>
+      <%# Commentaire: Exécute du code JavaScript EJS %>
+      <% } %>
+    <%# Commentaire: Ferme une balise HTML %>
+    </div>
+  <%# Commentaire: Ferme une balise HTML %>
+  </section>
+<%# Commentaire: Ferme une balise HTML %>
+</div>
+<%# Commentaire: Inclut un partial/template EJS %>
+<%- include('../partials/footer') %>

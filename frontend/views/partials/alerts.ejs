@@ -1,0 +1,20 @@
+<%# Commentaire: Exécute du code JavaScript EJS %>
+<% const messages = flash || { success: [], error: [], info: [] }; %>
+<%# Commentaire: Condition EJS: affiche selon condition %>
+<% if (messages.success && messages.success.length) { %>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="alert alert-success" role="status"><strong>Opération réussie</strong><p><%= messages.success.map(m => m.message || m).join(' ') %></p></div>
+<%# Commentaire: Exécute du code JavaScript EJS %>
+<% } %>
+<%# Commentaire: Condition EJS: affiche selon condition %>
+<% if (messages.error && messages.error.length) { %>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="alert alert-error" role="alert"><strong>Action impossible</strong><p><%= messages.error.map(m => m.message || m).join(' ') %></p></div>
+<%# Commentaire: Exécute du code JavaScript EJS %>
+<% } %>
+<%# Commentaire: Condition EJS: affiche selon condition %>
+<% if (messages.info && messages.info.length) { %>
+  <%# Commentaire: Ouvre/contient une balise HTML %>
+  <div class="alert alert-info" role="status"><strong>Information</strong><p><%= messages.info.map(m => m.message || m).join(' ') %></p></div>
+<%# Commentaire: Exécute du code JavaScript EJS %>
+<% } %>
